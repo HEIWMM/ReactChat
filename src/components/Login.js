@@ -1,5 +1,8 @@
 import React from 'react' 
 import Logo from './constant/logo.js'
+import md5 from 'blueimp-md5'
+import axios from 'axios'
+import { Redirect } from 'react-router-dom'
 import { List, InputItem, NavBar, Icon, WingBlank,WhiteSpace ,Radio,Button} from 'antd-mobile';
 const ListItem = List.Item;
 class Login extends React.Component{
@@ -8,10 +11,26 @@ class Login extends React.Component{
         this.state = {
             username:'',
             password:'',
-            type:''
+            type:'',
+            topath:''
         }
     }
     handleLogin=()=>{
+        const {username,password,type} = this.state
+        axios.post('/login',{username,password:md5(password),type})
+            .then((data)=>{
+                console.log(data);
+                if(!data.data.code){
+                    console.log(data.data.data.type);
+
+                    let topath = data.data.data.type+'s';
+                    this.setState({
+                        topath:topath
+                    })
+                   
+                }
+                
+            })
         console.log('Login');
     }
     handleChange=(name,val)=>{
@@ -20,6 +39,9 @@ class Login extends React.Component{
         })//对象里面属性名如果是变量，就加一个[]
     }
     render() {
+        if(this.state.topath){
+            return <Redirect to={this.state.topath} />
+        }
         return (
             <div>
                 <NavBar

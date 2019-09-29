@@ -88,6 +88,34 @@ module.exports = function(proxy, allowedHost) {
         pathRewrite:{
           '^/register': ''
         }
+      },
+      '/login':{
+        target:'http://localhost:4000/login',
+        changeOrigin:true,
+        pathRewrite:{
+          '^/login': ''
+        }
+      },
+      '/update':{
+        target:'http://localhost:4000/update',
+        changeOrigin:true,
+        pathRewrite:{
+          '^/update': ''
+        }
+      },
+      '/laoban':{
+        target:'http://localhost:4000/laoban',
+        changeOrigin:true,
+        pathRewrite:{
+          '^/laoban': ''
+        }
+      },
+      '/dashen':{
+        target:'http://localhost:4000/dashen',
+        changeOrigin:true,
+        pathRewrite:{
+          '^/dashen': ''
+        }
       }
     },
     before(app, server) {

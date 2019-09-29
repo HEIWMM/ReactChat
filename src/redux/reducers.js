@@ -8,14 +8,19 @@ const initUser = {
     _id:'',
     username:'',
     type:'',
-    msg:''
+    msg:'',
+    topath:''
+}
+function handlePath(type){
+    
+    return '/'+type+'info'
 }
 function user(state = initUser,action){
     switch(action.type){
         case 'AuthSuccess':
-            return {...action.data.data,msg:action.data.msg};
+            return {...action.data.data,msg:action.data.msg,topath:handlePath(action.data.data.type)};
         case 'AuthFailed':
-            return {...action.data.data,msg:action.data.msg};
+            return {...action.data.data,msg:action.data.msg,topath:''};
             // return state.filter((item)=>{
             //     if(item.username)
             // })
@@ -34,6 +39,8 @@ function handle(state = initialState, action) {
                 }
                 return item
             });
+        case 'AuthFailed':
+            return {action}
         default:
             return state
     }

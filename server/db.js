@@ -8,7 +8,11 @@ db.once('open', () => {
 const user = mongoose.Schema({
     username: String,
     password: String,
-    type: String
+    type: String,
+    post:String,
+    info:String,
+    company:String,
+    salary:String,
 });
 const model = {
     User: mongoose.model('User', user),  
