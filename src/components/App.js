@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button} from 'antd-mobile'
+
 import Main from './Main'
 import Login from './Login'
 import Register from './Register'
@@ -24,9 +24,7 @@ const mapDispatchToProps = dispatch => ({
 
 function App(props) {
   console.log(props);
-  const handleCh=()=>{
-    props.actions.handleChange();
-  }
+  
   return (
     <HashRouter>
       <Switch>
@@ -34,7 +32,7 @@ function App(props) {
         <Route path="/register" component={Register}/>
         <Route  component={Main}/>
       </Switch>
-      <Button size="small" type="primary" onClick={handleCh}>antd</Button>    
+  {/* <Button size="small" type="primary" onClick={handleCh}>antd</Button>     */}
     </HashRouter>
   );
 }

@@ -1,8 +1,8 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {update} from '../../redux/actions'
-import Cookies from 'js-cookies'
-import { List,NavBar, InputItem,  WingBlank, WhiteSpace, Button } from 'antd-mobile';
+
+import { List,NavBar, InputItem, WhiteSpace, Button } from 'antd-mobile';
 class DaShen extends React.Component{
     constructor(props){
         super(props);
@@ -18,6 +18,7 @@ class DaShen extends React.Component{
     }
     handleupdate=()=>{
         this.props.update(this.state)
+        this.props.history.replace('/dashens')
     }
     render(){
         return (

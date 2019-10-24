@@ -2,7 +2,6 @@ import React from 'react'
 import Logo from './constant/logo.js'
 import { Toast, List, InputItem, NavBar, Icon, WingBlank, WhiteSpace, Radio, Button } from 'antd-mobile';
 import Sass from '../css/register.scss'
-import axios from 'axios'
 import { connect } from 'react-redux'
 import { register } from '../redux/actions'
 import { Redirect } from 'react-router-dom'

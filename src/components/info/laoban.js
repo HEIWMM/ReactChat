@@ -1,8 +1,8 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {update} from '../../redux/actions'
-import Cookies from 'js-cookies'
-import { List,NavBar, InputItem, WingBlank, WhiteSpace, Button } from 'antd-mobile';
+
+import { List,NavBar, InputItem, WhiteSpace, Button } from 'antd-mobile';
 class LaoBan extends React.Component{
     constructor(props){
         super(props);
@@ -19,7 +19,8 @@ class LaoBan extends React.Component{
         })//对象里面属性名如果是变量，就加一个[]
     }
     handleupdate=()=>{
-        this.props.update(this.state)
+        this.props.update(this.state);
+        this.props.history.replace('/laobans')
     }
     render(){   
         return (

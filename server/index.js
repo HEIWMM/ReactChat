@@ -3,9 +3,11 @@ const bodyParser = require('body-parser');
 const express = require('express')
 const cookieParase = require('cookie-parser');
 const app = express()
+const server = require('http').createServer(app)
+
+const io = require('./socketIO/test.js')(server)
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.use(cookieParase());
-app.get('/bb', (req, res) => res.send('Hello World!'))
 app.use('/',indexRouter)
-app.listen(4000, () => console.log('Example app listening on port 4000!'))
+server.listen(4000, () => console.log('listen 4000'))

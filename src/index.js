@@ -1,10 +1,11 @@
 import React from 'react'
 import { render } from 'react-dom'
-import { createStore,bindActionCreators } from 'redux'
+
 import { Provider } from 'react-redux'
 import App from './components/App'
-import reducer from './redux/reducers'
+
 import store from './redux/store'
+// import  './test/socketio_test.js'
 //const store = createStore(reducer)
 
 render(

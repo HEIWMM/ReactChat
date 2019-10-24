@@ -116,6 +116,34 @@ module.exports = function(proxy, allowedHost) {
         pathRewrite:{
           '^/dashen': ''
         }
+      },
+      '/user':{
+        target:'http://localhost:4000/user',
+        changeOrigin:true,
+        pathRewrite:{
+          '^/user': ''
+        }
+      },
+      '/socketio':{
+        target:'http://localhost:4000/socketio',
+        changeOrigin:true,
+        pathRewrite:{
+          '^/socketio': ''
+        }
+      },
+      '/msglist':{
+        target:'http://localhost:4000/msglist',
+        changeOrigin:true,
+        pathRewrite:{
+          '^/msglist': ''
+        }
+      },
+      '/readmsg':{
+        target:'http://localhost:4000/readmsg',
+        changeOrigin:true,
+        pathRewrite:{
+          '^/readmsg': ''
+        }
       }
     },
     before(app, server) {

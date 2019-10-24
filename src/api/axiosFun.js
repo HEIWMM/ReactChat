@@ -11,5 +11,13 @@ export  const reqUpdate=(user)=>{
     console.log(user);
     return axios.post('/update',user)
 }
-
+export  const reqUser=()=>{
+    return axios.get('/user')
+}
+export  const reqMsglist=()=>{
+    return axios.get('/msglist')
+}
+export  const reqReadmsg=(from)=>{
+    return axios.post('/readmsg',from)
+}
 
