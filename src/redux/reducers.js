@@ -34,7 +34,7 @@ function user(state = initUser, action) {
 const initChat = {
     users: {}, // 所有用户信息的对象  属性名: userid, 属性值是: {username, header}
     chatMsgs: [], // 当前用户所有相关msg的数组
-    unReadCount: 0 // 总的未读数量
+    unReadCount: 0 // 总的信息未读数量
 }
 function userChat(state = initChat, action) {
     switch (action.type) {
