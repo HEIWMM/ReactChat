@@ -23,9 +23,6 @@ function user(state = initUser, action) {
             return { ...action.data.data, msg: action.data.msg, topath: handlePath(action.data.data.type) };
         case 'AuthFailed':
             return { ...action.data.data, msg: action.data.msg, topath: ' ' };
-        // return state.filter((item)=>{
-        //     if(item.username)
-        // })
         case 'ReceiveUser': // data是user
             return action.data
         case 'ResetUser': // data是msg
