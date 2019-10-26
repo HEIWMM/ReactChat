@@ -1,4 +1,5 @@
-.am_tab_bar_bar{ /*使导航始终在底部*/
-    position: fixed;
-    
+:global(.am-tabs-bottom) {
+  /*使导航始终在底部*/
+  position: fixed;
+  bottom: 0px;
 }

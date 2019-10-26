@@ -9,6 +9,7 @@ const Item = TabBar.Item
 class NavFooter extends Component {
 
   render () {
+    //console.log(Sass);
     let {navList} = this.props
     // 过滤掉hide为true的nav prefixCls={Sass.am_tab_bar_bar}
     navList = navList.filter(nav => !nav.hide)

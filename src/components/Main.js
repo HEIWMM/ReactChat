@@ -12,6 +12,7 @@ import Chat from './Chat'
 import NavFooter from './nav-footer/nav-footer'
 import Cookies from 'js-cookies'
 import { getUser } from '../redux/actions'
+import Sass from '../css/main.scss'
 class Main extends React.Component {
     navList = [ // 包含所有导航组件的相关信息数据
         {
